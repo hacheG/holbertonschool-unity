@@ -20,12 +20,14 @@ public class PlayerController : MonoBehaviour
     public Camera mainCamera;
     private Vector3 camForward;
     private Vector3 camRight;
-    
+
+    Transform pos;
 
     // Start is called before the first frame update
     void Start()
     {
         charaContr = GetComponent<CharacterController>();
+        pos = GetComponent<Transform>();
         
     }
     
@@ -48,6 +50,10 @@ public class PlayerController : MonoBehaviour
         PlayerSkills();
         charaContr.Move(movePlayer * Time.deltaTime);
         //Debug.Log(charaContr.velocity.magnitude);
+        if (pos.position.y < -30f)
+        {
+            pos.position = new Vector3(0, 10, 0);
+        }
         
     }
  
