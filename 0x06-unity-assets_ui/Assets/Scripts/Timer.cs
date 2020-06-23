@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public Text timerText;
+    public Text time;
 
     private float timer = 0.0f;
     private bool stop = false;
@@ -29,7 +30,15 @@ public class Timer : MonoBehaviour
 
             timerText.text = string.Format("{0:0}:{1:00}.{2:00}", timer / 60, timer % 60, timer * 100 % 100);
             timerText.fontSize = 36;
-            timerText.color = Color.green;
+            Color myColor = new Color(0f, 0f, 0f, 0f);
+            timerText.color = myColor;
+            Win();
         }
+    }
+
+    public void Win()
+    {
+        time.text = timerText.text;
+        //Debug.Log(string.Format("{0}", time));
     }
 }
