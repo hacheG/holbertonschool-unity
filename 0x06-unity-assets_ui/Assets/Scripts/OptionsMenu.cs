@@ -38,4 +38,11 @@ public class OptionsMenu : MonoBehaviour
         //SceneManager.LoadScene(nameScene);
         //SceneManager.LoadScene(prevscene);
     }
+
+    public void Apply()
+    {
+
+    }
+
+    
 }
